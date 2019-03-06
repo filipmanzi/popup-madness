@@ -11,7 +11,7 @@ setInterval(() => {
         let randomLeft = Math.floor(Math.random() * screenWidth) + 1;
         let randomTop = Math.floor(Math.random() * screenHeight) + 1;
 
-        let randomPopupImage = Math.floor(Math.random() * 8) + 1;
+        let randomPopupImage = Math.floor(Math.random() * 10) + 1;
 
         let newPopup = new Popup(randomLeft, randomTop, ("./popups/images/" + randomPopupImage + ".jpg"))
         newPopup.Render();
@@ -26,7 +26,7 @@ setInterval(() => {
         let randomLeft = Math.floor(Math.random() * screenWidth) + 1;
         let randomTop = Math.floor(Math.random() * screenHeight) + 1;
 
-        let randomPopupImage = Math.floor(Math.random() * 5) + 1;
+        let randomPopupImage = Math.floor(Math.random() * 7) + 1;
 
         let newPopup = new Popup(randomLeft, randomTop, ("./popups/gifs/" + randomPopupImage + ".gif"))
         newPopup.Render();

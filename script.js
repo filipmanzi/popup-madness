@@ -4,9 +4,10 @@ let screenWidth = screen.width;
 let popupCount = 0;
 
 let ready = false;
+let twoSecDone = false;
 
 setInterval(() => {
-    if (ready) {
+    if (ready && twoSecDone) {
         let randomLeft = Math.floor(Math.random() * screenWidth) + 1;
         let randomTop = Math.floor(Math.random() * screenHeight) + 1;
 
@@ -18,7 +19,7 @@ setInterval(() => {
         popupCount++;
         document.getElementById("counter").innerText = "Popup Count: " + popupCount;
     }
-}, 1000);
+}, 500);
 
 setInterval(() => {
     if (ready) {
@@ -29,6 +30,8 @@ setInterval(() => {
 
         let newPopup = new Popup(randomLeft, randomTop, ("./popups/gifs/" + randomPopupImage + ".gif"))
         newPopup.Render();
+
+        popupCount++;
     }
 }, 5000);
 
@@ -49,4 +52,7 @@ document.getElementById("ready").addEventListener("click", function () {
         elem.webkitRequestFullscreen();
     }
     ready = true;
+    setTimeout(() => {
+        twoSecDone = true;
+    }, 2300);
 })
